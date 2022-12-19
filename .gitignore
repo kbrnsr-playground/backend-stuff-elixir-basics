@@ -1,0 +1,12 @@
+# CC0-1.0
+# https://github.com/github/gitignore/blob/main/Elixir.gitignore
+/_build
+/cover
+/deps
+/doc
+/.fetch
+erl_crash.dump
+*.ez
+*.beam
+/config/*.secret.exs
+.elixir_ls/
