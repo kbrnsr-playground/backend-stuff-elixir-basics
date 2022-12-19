@@ -10,8 +10,7 @@
     "vscode": {
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
-        "mjmcloug.vscode-elixir",
-        "sammkj.vscode-elixir-formatter"
+        "mjmcloug.vscode-elixir"
       ]
     }
   },
