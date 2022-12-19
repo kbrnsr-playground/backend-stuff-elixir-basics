@@ -15,4 +15,8 @@ defmodule Blork do
   def hello do
     :world
   end
+
+  defp private_hello do
+    :private_world
+  end
 end
