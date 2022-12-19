@@ -10,7 +10,9 @@ services:
         VARIANT: "1.14-slim"
 
     volumes:
-      - ..:/workspaces
+      - workspaces:/workspaces
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
+volumes:
+  workspaces:
