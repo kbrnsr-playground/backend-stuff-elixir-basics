@@ -11,6 +11,7 @@ defmodule Calculator do
 
   def find_distance_traveled(speed, time) do
     speed
-    # |> BasicMath
+    |> BasicMath.multiply(time)
+    |> BasicMath.round_up()
   end
 end
