@@ -116,3 +116,26 @@ to download all dependencies.
 ## Numbers and math operations in Elixir
 
 Relevant code should be inside the [numbers](./numbers/) folder.
+
+### Defining functions
+
+Functions need to be defined inside modules, else they won't be able to
+compile.
+
+### export ...
+
+Running `exports BasicMath` in iex will at time of writing this README return:
+```
+add/2
+```
+which shows the public function contained inside
+[basic_math.ex](./numbers/lib/basic_math.ex) as well as the function arity,
+arity being a fancy way of saying how many arguments the function accepts.
+
+### recompile
+
+Instead of doing Ctrl+C twice and recompile on the OS shell, you can do it in
+iex by running:
+```
+recompile
+```
