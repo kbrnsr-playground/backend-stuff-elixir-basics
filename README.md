@@ -112,3 +112,7 @@ With regular shell:
 mix deps.get
 ```
 to download all dependencies.
+
+## Numbers and math operations in Elixir
+
+Relevant code should be inside the [numbers](./numbers/) folder.
