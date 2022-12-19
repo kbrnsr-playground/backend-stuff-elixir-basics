@@ -2,7 +2,7 @@
 	"name": "backend-stuff-elixir-basics",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "elixir",
-	"workspaceFolder": "/workspace",
+	"workspaceFolder": "/workspaces/backend-stuff-elixir-basics",
   "shutdownAction": "stopCompose",
 
 	// Configure tool-specific properties.
