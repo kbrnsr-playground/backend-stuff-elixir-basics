@@ -4,13 +4,16 @@ Repository for code produced by following along Jacob Luetzow's ([YouTube @backe
 videos from the 
 [Elixir Basics](https://www.youtube.com/playlist?list=PL2Rv8vpZJz4w7Sm9STyZvoY0JAKUk_JOB) playlist.
 
+Full repository by [@acobluetzow](https://github.com/jacobluetzow) can be
+found at [acobluetzow/elixir_basics_solutions](https://github.com/jacobluetzow/elixir_basics_solutions)
+
 ## Installation
 
 I decided to use a different approach compared to Jacob's.
 Instead of installing it locally I decided to use the VS Code
 `Dev Containers: Add Dev Container Configuration Files...` wizard, where I
 chose the option that installed Elixir, Phoenix Framework and PostgreSQL.
-This is a nice base to start customizing the Docker setup to this tutorial.
+This is a nice base to start customizing the Docker setup for this tutorial.
 
 ### Prerequisites
 
