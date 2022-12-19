@@ -4,13 +4,16 @@ Repository for code produced by following along Jacob Luetzow's ([YouTube @backe
 videos from the 
 [Elixir Basics](https://www.youtube.com/playlist?list=PL2Rv8vpZJz4w7Sm9STyZvoY0JAKUk_JOB) playlist.
 
+Full repository by [@acobluetzow](https://github.com/jacobluetzow) can be
+found at [acobluetzow/elixir_basics_solutions](https://github.com/jacobluetzow/elixir_basics_solutions)
+
 ## Installation
 
 I decided to use a different approach compared to Jacob's.
 Instead of installing it locally I decided to use the VS Code
 `Dev Containers: Add Dev Container Configuration Files...` wizard, where I
 chose the option that installed Elixir, Phoenix Framework and PostgreSQL.
-This is a nice base to start customizing the Docker setup to this tutorial.
+This is a nice base to start customizing the Docker setup for this tutorial.
 
 ### Prerequisites
 
@@ -112,3 +115,30 @@ With regular shell:
 mix deps.get
 ```
 to download all dependencies.
+
+## Numbers and math operations in Elixir
+
+Relevant code should be inside the [numbers](./numbers/) folder.
+
+### Defining functions
+
+Functions need to be defined inside modules, else they won't be able to
+compile.
+
+### export ...
+
+Running `exports BasicMath` in iex will at time of writing this README return:
+```
+add/2
+```
+which shows the public function contained inside
+[basic_math.ex](./numbers/lib/basic_math.ex) as well as the function arity,
+arity being a fancy way of saying how many arguments the function accepts.
+
+### recompile
+
+Instead of doing Ctrl+C twice and recompile on the OS shell, you can do it in
+iex by running:
+```
+recompile
+```
