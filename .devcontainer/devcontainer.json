@@ -11,7 +11,8 @@
 		"vscode": {
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"mjmcloug.vscode-elixir"
+				"mjmcloug.vscode-elixir",
+        "saratravi.elixir-formatter"
 			]
 		}
 	},

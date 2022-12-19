@@ -13,6 +13,7 @@ defmodule BasicMathTest do
   test "multiply 2 * 3.1 = 6.2" do
     assert BasicMath.multiply(2, 3.1) === 6.2
   end
+
   test "divide 3 / -1.5 = -2" do
     assert BasicMath.divide(3, -1.5) === -2.0
   end
