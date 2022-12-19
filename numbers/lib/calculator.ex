@@ -9,8 +9,8 @@ defmodule Calculator do
     |> BasicMath.round_up()
   end
 
-  # def find_distance_traveled(speed, time) do
-  # speed
-  # |> BasicMath
-  # end
+  def find_distance_traveled(speed, time) do
+    speed
+    # |> BasicMath
+  end
 end
