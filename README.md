@@ -135,10 +135,38 @@ which shows the public function contained inside
 [basic_math.ex](./numbers/lib/basic_math.ex) as well as the function arity,
 arity being a fancy way of saying how many arguments the function accepts.
 
-### recompile
+### Recompile
 
 Instead of doing Ctrl+C twice and recompile on the OS shell, you can do it in
 iex by running:
 ```
 recompile
+```
+
+## Strings in Elixir
+
+Strings are encoded in UTF-8 unless you use a Windows terminal, in that case
+you will need to customize the terminal environment.
+But it's irrelevant to me so it won't be added to the README
+
+### Define strings
+
+Regular strings are defined as:
+```
+"Hi!"
+```
+
+### Concatenate strings
+
+Concatenate strings by executing (iex):
+```
+"Welcome to" <> " " <> "Backend stuff"
+```
+
+### String interpolation
+
+There are a few ways to use string interpolation. 
+```
+"6 * 7 = #{6 * 7}"
+# "6 * 7 = 42"
 ```
