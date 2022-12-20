@@ -29,4 +29,14 @@ defmodule Recursion do
   def occurence_count([_head | _tail], "Snacks"), do: 400
   def occurence_count([value | tail], value), do: 1 + occurence_count(tail, value)
   def occurence_count([_head | tail], value), do: occurence_count(tail, value)
+
+  def partial_occurence([], _occurence), do: []
+
+  def partial_occurence([head | tail], occurence) do
+    if String.contains?(head, occurence) do
+      [head | partial_occurence(tail, occurence)]
+    else
+      partial_occurence(tail, occurence)
+    end
+  end
 end
