@@ -1,8 +1,17 @@
 # Elixir Basics
 
-Repository for code produced by following along Jacob Luetzow's ([YouTube @backendstuff](https://www.youtube.com/@backendstuff)) videos from the [Elixir Basics](https://www.youtube.com/playlist?list=PL2Rv8vpZJz4w7Sm9STyZvoY0JAKUk_JOB) playlist.
+Repository for code produced by following along Jacob Luetzow's
+([YouTube @backendstuff](https://www.youtube.com/@backendstuff)) videos from
+the
+[Elixir Basics](https://www.youtube.com/playlist?list=PL2Rv8vpZJz4w7Sm9STyZvoY0JAKUk_JOB)
+playlist.
 
 The tutorial code authored by the content creator can be found in [```@acobluetzow```](https://github.com/jacobluetzow)'s profile [```acobluetzow/elixir_basics_solutions```](https://github.com/jacobluetzow/elixir_basics_solutions)
+
+Note on terms used in this document
+
+* `shell` will refer to the host terminal, be it bash, zsh etc.
+* `iex` will refer to the interactive Elixir shell.
 
 ## Installation
 
@@ -22,46 +31,44 @@ extension `0.266.1`
 
 ### Configuration
 
-I recommend to use VS Code to clone the repository into a named volume
-`workspaces` .
+Use VS Code to clone the repository into a named volume `workspaces`, you can
+use other ways to get your code mounted into a Docker container, but most of
+them have too many downsides compared to the advantages.
 If you decide to clone without creating the volume, then Docker Compose will
-make a volume with a semi-randon name where your code will go, and I haven't
-tested if it persists after system reboot. Besides, using a named volume will
-make it easier to backup your code if you decide to do so.
+make a volume with a semi-randon name where your code will go.
 
 ## Elixir's Mix for beginners
 
 ### Create project
 
 To create a new project with the name `blork` , execute the following from the
-repository root:
+repository root (`shell`):
 
 ```Shell
 mix new blork
 ```
 
-### First run: compile and run Elixir project
+### First run: compile and run Mix project
 
 Change directory to the newly generated project and compile/run it by
-executing:
+executing (`shell`):
 
 ```Shell
 cd blork
 iex -S mix
 ```
 
-this will start the elixir shell `iex` with everything we need to call the
-project functions.
+this will start `iex` with everything we need to call the project functions.
 
 ### Getting help
 
-Get module information/help for `Blork` by executing, with iex shell:
+Get module information/help for `Blork` (`iex`):
 
 ```Elixir
 h Blork
 ```
 
-Get documentation for function `Blork.hello` by executing, with iex shell:
+Get documentation for function `Blork.hello` (`iex`):
 
 ```Elixir
 h Blork.hello
@@ -70,7 +77,7 @@ h Blork.hello
 The documentation gives an example on how to execute `Blork.hello` as well as
 what it will return (an Atom).
 
-Execute with iex:
+Execute (`iex`):
 
 ```Elixir
 Blork.hello()
@@ -80,7 +87,7 @@ to see this in action.
 
 ### Public/private functions
 
-If we ever need to see all public functions for the module, we can use (iex)
+If we ever need to see all public functions for the module (`iex`)
 
 ```Elixir
 exports Blork
@@ -91,55 +98,54 @@ If we ever need to make a private function we can define it with `defp` (see
 
 ### Mix Compile
 
-Exit iex by Ctrl+C twice and from the `blork` project and execute
+Exit `iex` by Ctrl+C twice and from the `blork` project execute (`shell`)
 
-```Elixir
+```Shell
 mix compile
-iex -S mix
 ```
 
-to compile project and run iex.
+to compile Mix project.
 
 ### Mix help
 
-With regular shell:
+Execute (`shell`):
 
 ```Shell
 mix help
 ```
 
-which gives you a list of all the commands you can run with mix.
+which gives you a list of all the commands you can run with Mix.
 
 ### Mix test
 
-With regular shell
+Execute (`shell`):
 
 ```Shell
 mix test
 ```
 
-will run all defined tests.
+which will run all defined tests in Mix project.
 
 ### Mix get defined dependencies
 
-With regular shell:
+Execute (`shell`):
 
 ```Shell
 mix deps.get
 ```
 
-to download all dependencies.
+to download all dependencies for Mix project.
 
 ## Numbers and math operations in Elixir
 
-Relevant code should be inside the [numbers](./numbers/) folder.
+Relevant code can be found inside the [`numbers`](./numbers/) folder.
 
 ### Defining functions
 
 Functions need to be defined inside modules, else they won't be able to
 compile.
 
-### export
+### Get function signatures
 
 Running `exports BasicMath` in iex will at time of writing this README return:
 
@@ -153,10 +159,10 @@ arity being a fancy way of saying how many arguments the function accepts.
 
 ### Recompile
 
-Instead of doing Ctrl+C twice and recompile on the OS shell, you can do it in
-iex by running:
+Instead of doing Ctrl+C twice and recompile with `shell` commands, you can do
+it in `iex` by executing:
 
-```Elxir
+```Elixir
 recompile
 ```
 
@@ -164,7 +170,9 @@ recompile
 
 Strings are encoded in UTF-8 unless you use a Windows terminal, in that case
 you will need to customize the terminal environment.
-But it's irrelevant to me so it won't be added to the README
+But it's irrelevant to me so I won't be added details on that to the README.
+
+Relevant code can be found inside the [`all_strings`](./all_strings/) folder.
 
 ### Define strings
 
@@ -172,21 +180,81 @@ Regular strings are defined as:
 
 ```Elixir
 "Hi!"
+# "Hi!"
 ```
 
 ### Concatenate strings
 
-Concatenate strings by executing (iex):
+Concatenate strings:
 
-```Elixr
+```Elixir
 "Welcome to" <> " " <> "Backend stuff"
+# "Welcome to Backend stuff"
 ```
 
 ### String interpolation
 
-There are a few ways to use string interpolation.
+There are a few ways to use string interpolation:
 
 ```Elixir
 "6 * 7 = #{6 * 7}"
 # "6 * 7 = 42"
+```
+
+```Elixir
+"Elixir can convert booleans to strings: #{true}"
+# "Elixir can convert booleans to strings: true"
+```
+
+```Elixir
+"And #{["lists", ",", "too!"]}"
+# "And lists,too!"
+```
+
+We can't interpolate a function:
+
+```Elixir
+"But not a function: #{fn x -> x end}"
+# ** (Protocol.UndefinedError) protocol String.Chars not implemented for
+# #Function<42.3316493/1 in :erl_eval.expr/6> of type Function. This protocol is
+# implemented for the following type(s): Atom, BitString, Date, DateTime, Float,
+# Hex.Solver.Assignment, Hex.Solver.Constraints.Empty, Hex.Solver.Constraints.
+# Range, Hex.Solver.Constraints.Union, Hex.Solver.Incompatibility, Hex.Solver.
+# PackageRange, Hex.Solver.Term, Integer, List, NaiveDateTime, Time, URI,
+# Version, Version.Requirement
+#     (elixir 1.14.2) lib/string/chars.ex:3: String.Chars.impl_for!/1
+#     (elixir 1.14.2) lib/string/chars.ex:22: String.Chars.to_string/1
+#     iex:6: (file)
+```
+
+### Escape characters
+
+```Elixir
+"\"A\" is \#1st letter of the alphabet\n"
+# "\"A\" is \#1st letter of the alphabet\n"
+IO.puts("\"A\" is \#1st letter of the alphabet\n")
+# "A" is #1st letter of the alphabet
+# 
+# :ok
+```
+
+### Multiline strings
+
+```Elixir
+"""
+we can type
+multiple lines
+without escaping newline
+"""
+# "we can type\nmultiple lines\nwithout escaping newline\n"
+IO.puts("""
+we can type
+multiple lines
+without escaping newline
+""")
+# we can type
+# multiple lines
+# without escaping newline
+# 
+# :ok
 ```
