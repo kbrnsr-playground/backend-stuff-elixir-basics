@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": "..",
+    },
+    {
+      "path": "../all_strings",
+    },
+    {
+      "path": "../blork",
+    },
+    {
+      "path": "../numbers",
+    }
+  ],
+  "settings": {}
+}
