@@ -258,3 +258,69 @@ without escaping newline
 # 
 # :ok
 ```
+
+## Linked-Lists in Elixir
+
+### Basic list ops
+
+Create empty list (`iex`):
+
+```Elixir
+[]
+# []
+```
+
+Create list with single element (`iex`):
+
+```Elixir
+[1]
+# [1]
+```
+
+Create list with multiple elements (`iex`):
+
+```Elixir
+[1, 2, 3]
+# [1, 2, 3]
+```
+
+Add elements of two lists together (`iex`):
+
+```Elixir
+[1] ++ [2, 3]
+# [1, 2, 3]
+```
+
+Prepend single element to elements of another list using `cons` (pipe) operator
+(`iex`):
+
+```Elixir
+[1 | [2, 3]]
+# [1, 2, 3]
+```
+
+Create list with mixed types (`iex`):
+
+```Elixir
+[1, :a, 2.0, "string"]
+# [1, :a, 2.0, "string"]
+```
+
+### Head/tail notation
+
+Seems very much like deconstructing in JavaScript
+
+```Elixir
+list = [1, 2, 3, 4, 5, 6]
+# [1, 2, 3, 4, 5, 6]
+list
+# [1, 2, 3, 4, 5, 6]
+[first, second | rest] = list
+# [1, 2, 3, 4, 5, 6]
+first
+# 1
+second
+# 2
+rest
+# [3, 4, 5, 6]
+```

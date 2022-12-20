@@ -11,6 +11,9 @@
     },
     {
       "path": "../numbers",
+    },
+    {
+      "path": "../linked_lists",
     }
   ],
   "settings": {}
