@@ -1,11 +1,8 @@
-# @backendstuff's Elixir Basics
+# Elixir Basics
 
-Repository for code produced by following along Jacob Luetzow's ([YouTube @backendstuff](https://www.youtube.com/@backendstuff)) 
-videos from the 
-[Elixir Basics](https://www.youtube.com/playlist?list=PL2Rv8vpZJz4w7Sm9STyZvoY0JAKUk_JOB) playlist.
+Repository for code produced by following along Jacob Luetzow's ([YouTube @backendstuff](https://www.youtube.com/@backendstuff)) videos from the [Elixir Basics](https://www.youtube.com/playlist?list=PL2Rv8vpZJz4w7Sm9STyZvoY0JAKUk_JOB) playlist.
 
-Full repository by [@acobluetzow](https://github.com/jacobluetzow) can be
-found at [acobluetzow/elixir_basics_solutions](https://github.com/jacobluetzow/elixir_basics_solutions)
+The tutorial code authored by the content creator can be found in [```@acobluetzow```](https://github.com/jacobluetzow)'s profile [```acobluetzow/elixir_basics_solutions```](https://github.com/jacobluetzow/elixir_basics_solutions)
 
 ## Installation
 
@@ -13,7 +10,7 @@ I decided to use a different approach compared to Jacob's.
 Instead of installing it locally I decided to use the VS Code
 `Dev Containers: Add Dev Container Configuration Files...` wizard, where I
 chose the option that installed Elixir, Phoenix Framework and PostgreSQL.
-This is a nice base to start customizing the Docker setup for this tutorial.
+This created a nice base to start customizing the Docker setup for this tutorial.
 
 ### Prerequisites
 
@@ -39,7 +36,7 @@ make it easier to backup your code if you decide to do so.
 To create a new project with the name `blork` , execute the following from the
 repository root:
 
-```
+```shell
 mix new blork
 ```
 
@@ -48,7 +45,7 @@ mix new blork
 Change directory to the newly generated project and compile/run it by
 executing:
 
-```
+```shell
 cd blork
 iex -S mix
 ```
@@ -60,13 +57,13 @@ project functions.
 
 Get module information/help for `Blork` by executing, with iex shell:
 
-```
+```Elixir
 h Blork
 ```
 
 Get documentation for function `Blork.hello` by executing, with iex shell:
 
-```
+```Elixir
 h Blork.hello
 ```
 
@@ -75,7 +72,7 @@ what it will return (an Atom).
 
 Execute with iex:
 
-```
+```Elixir
 Blork.hello()
 ```
 
@@ -85,18 +82,18 @@ to see this in action.
 
 If we ever need to see all public functions for the module, we can use (iex)
 
-```
+```Elixir
 exports Blork
 ```
 
 If we ever need to make a private function we can define it with `defp` (see
-[ `blork.ex` ](blork/lib/blork.ex)).
+[`blork.ex`](blork/lib/blork.ex)).
 
 ### Mix Compile
 
 Exit iex by Ctrl+C twice and from the `blork` project and execute
 
-```
+```Elixir
 mix compile
 iex -S mix
 ```
@@ -107,7 +104,7 @@ to compile project and run iex.
 
 With regular shell:
 
-```
+```script
 mix help
 ```
 
@@ -117,7 +114,7 @@ which gives you a list of all the commands you can run with mix.
 
 With regular shell
 
-```
+```shell
 mix test
 ```
 
@@ -127,7 +124,7 @@ will run all defined tests.
 
 With regular shell:
 
-```
+```shell
 mix deps.get
 ```
 
@@ -142,16 +139,16 @@ Relevant code should be inside the [numbers](./numbers/) folder.
 Functions need to be defined inside modules, else they won't be able to
 compile.
 
-### export ...
+### export
 
 Running `exports BasicMath` in iex will at time of writing this README return:
 
-```
+```Elixir
 add/2
 ```
 
 which shows the public function contained inside
-[basic_math.ex](./numbers/lib/basic_math.ex) as well as the function arity, 
+[basic_math.ex](./numbers/lib/basic_math.ex) as well as the function arity,
 arity being a fancy way of saying how many arguments the function accepts.
 
 ### Recompile
@@ -159,7 +156,7 @@ arity being a fancy way of saying how many arguments the function accepts.
 Instead of doing Ctrl+C twice and recompile on the OS shell, you can do it in
 iex by running:
 
-```
+```Elxir
 recompile
 ```
 
@@ -173,7 +170,7 @@ But it's irrelevant to me so it won't be added to the README
 
 Regular strings are defined as:
 
-```
+```Elixir
 "Hi!"
 ```
 
@@ -181,15 +178,15 @@ Regular strings are defined as:
 
 Concatenate strings by executing (iex):
 
-```
+```Elixr
 "Welcome to" <> " " <> "Backend stuff"
 ```
 
 ### String interpolation
 
-There are a few ways to use string interpolation. 
+There are a few ways to use string interpolation.
 
-```
+```Elixir
 "6 * 7 = #{6 * 7}"
 # "6 * 7 = 42"
 ```
