@@ -36,7 +36,7 @@ make it easier to backup your code if you decide to do so.
 To create a new project with the name `blork` , execute the following from the
 repository root:
 
-```shell
+```Shell
 mix new blork
 ```
 
@@ -45,7 +45,7 @@ mix new blork
 Change directory to the newly generated project and compile/run it by
 executing:
 
-```shell
+```Shell
 cd blork
 iex -S mix
 ```
@@ -104,7 +104,7 @@ to compile project and run iex.
 
 With regular shell:
 
-```script
+```Shell
 mix help
 ```
 
@@ -114,7 +114,7 @@ which gives you a list of all the commands you can run with mix.
 
 With regular shell
 
-```shell
+```Shell
 mix test
 ```
 
@@ -124,7 +124,7 @@ will run all defined tests.
 
 With regular shell:
 
-```shell
+```Shell
 mix deps.get
 ```
 
