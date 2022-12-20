@@ -16,7 +16,7 @@ defmodule AllStrings do
     |> String.capitalize()
   end
 
-  #def initials(full_name) do
+  # def initials(full_name) do
   #  String.split(full_name)
-  #end
+  # end
 end
