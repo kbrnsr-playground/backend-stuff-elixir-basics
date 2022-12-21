@@ -6,7 +6,10 @@ the
 [Elixir Basics](https://www.youtube.com/playlist?list=PL2Rv8vpZJz4w7Sm9STyZvoY0JAKUk_JOB)
 playlist.
 
-The tutorial code authored by the content creator can be found in [```@acobluetzow```](https://github.com/jacobluetzow)'s profile [```acobluetzow/elixir_basics_solutions```](https://github.com/jacobluetzow/elixir_basics_solutions)
+The tutorial code authored by the content creator can be found in [`@jacobluetzow`](https://github.com/jacobluetzow)'s profile [`jacobluetzow/elixir_basics_solutions```](https://github.com/jacobluetzow/elixir_basics_solutions)
+
+I decided to create the Mix umbrella project `elixir_basics` a few parts into
+the video series and move all other Mix projects inside it.
 
 Note on terms used in this document
 
@@ -16,7 +19,7 @@ Note on terms used in this document
 ## Installation
 
 I decided to use a different approach compared to Jacob's.
-Instead of installing it locally I decided to use the VS Code
+Instead of installing elixir locally I decided to use the VS Code
 `Dev Containers: Add Dev Container Configuration Files...` wizard, where I
 chose the option that installed Elixir, Phoenix Framework and PostgreSQL.
 This created a nice base to start customizing the Docker setup for this tutorial.
@@ -39,10 +42,11 @@ make a volume with a semi-randon name where your code will go.
 
 ## Elixir's Mix for beginners
 
+Relevant code can be found inside the [`elixir_basics/apps/blork`](elixir_basics/apps/blork) folder.
+
 ### Create project
 
-To create a new project with the name `blork` , execute the following from the
-repository root (`shell`):
+To create a new project with the name `blork` , execute the following from `elixir_basics/apps` (`shell`):
 
 ```Shell
 mix new blork
@@ -138,7 +142,7 @@ to download all dependencies for Mix project.
 
 ## Numbers and math operations in Elixir
 
-Relevant code can be found inside the [`numbers`](./numbers/) folder.
+Relevant code can be found inside the [`elixir_basics/apps/numbers`](elixir_basics/apps/numbers) folder.
 
 ### Defining functions
 
@@ -154,7 +158,7 @@ add/2
 ```
 
 which shows the public function contained inside
-[basic_math.ex](./numbers/lib/basic_math.ex) as well as the function arity,
+[basic_math.ex](elixir_basics/apps/numbers/lib/numbers/basic_math.ex) as well as the function arity,
 arity being a fancy way of saying how many arguments the function accepts.
 
 ### Recompile
@@ -172,7 +176,7 @@ Strings are encoded in UTF-8 unless you use a Windows terminal, in that case
 you will need to customize the terminal environment.
 But it's irrelevant to me so I won't be added details on that to the README.
 
-Relevant code can be found inside the [`all_strings`](./all_strings/) folder.
+Relevant code can be found inside the [`elixir_basics/apps/all_strings`](elixir_basics/apps/all_strings) folder.
 
 ### Define strings
 
@@ -260,6 +264,8 @@ without escaping newline
 ```
 
 ## Linked-Lists in Elixir
+
+Relevant code can be found inside the [`elixir_basics/apps/linked_lists`](elixir_basics/apps/linked_lists) folder.
 
 ### Basic list ops
 
