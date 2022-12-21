@@ -17,6 +17,9 @@
     },
     {
       "path": "../recursion"
+    },
+    {
+      "path": "../pattern_matching"
     }
   ],
   "settings": {}
