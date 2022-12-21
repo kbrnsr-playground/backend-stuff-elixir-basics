@@ -2,7 +2,7 @@ defmodule AllStringsTest do
   use ExUnit.Case
   doctest AllStrings
 
-  test "greets the world" do
-    assert AllStrings.hello() == :world
+  test "remove whitespace from beginning and end of string" do
+    assert AllStrings.trim_string(" test string ") == "test string"
   end
 end
