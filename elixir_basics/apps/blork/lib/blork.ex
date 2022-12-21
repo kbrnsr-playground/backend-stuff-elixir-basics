@@ -13,6 +13,7 @@ defmodule Blork do
 
   """
   def hello do
+    private_hello()
     :world
   end
 
