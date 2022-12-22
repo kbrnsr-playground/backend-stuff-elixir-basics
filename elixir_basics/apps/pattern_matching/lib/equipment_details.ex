@@ -5,7 +5,13 @@ defmodule EquipmentDetails do
   """
 
   @doc """
-  Provides list of equipment specified as atoms
+  Provides list of equipment specified as atoms.
+
+  ## Examples
+
+      iex > EquipmentDetails.get_equipment_list()
+      [:space_helmet, :space_suit, :snacks, :grappling_hook, :probe]
+
   """
   def get_equipment_list() do
     [:space_helmet, :space_suit, :snacks, :grappling_hook, :probe]
