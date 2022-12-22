@@ -1,25 +1,54 @@
 defmodule EquipmentDetails do
   @moduledoc """
-  Provides list of each piece of equipment as well as weight and
-  quantity of each item
+  Documentation for 'EquipmentDetails'.
   """
+
+  @doc """
+  Hello world.
+
+  ## Examples
+
+      iex> EquipmentDetails.hello()
+      [:world]
+
+  """
+  def hello do
+    [:world]
+  end
 
   @doc """
   Provides list of equipment specified as atoms.
 
   ## Examples
 
-      iex > EquipmentDetails.get_equipment_list()
+      iex > EquipmentDetails.get_equipment_list
       [:space_helmet, :space_suit, :snacks, :grappling_hook, :probe]
 
   """
-  def get_equipment_list() do
+  def get_equipment_list do
     [:space_helmet, :space_suit, :snacks, :grappling_hook, :probe]
   end
 
   @doc """
-  Get tuple of equipment weight and quantity
-  raise runtime error if equipment piece doesn't exist
+  Get tuple of equipment weight, weight denomination and quantity.
+
+  ## Examples
+
+      iex > EquipmentDetails.item_details(:space_helmet)
+      {3, :kg, 1}
+
+      iex > EquipmentDetails.item_details(:space_suit)
+      {16, :kg, 1}
+
+      iex > EquipmentDetails.item_details(:snacks)
+      {1, :kg, 16}
+
+      iex > EquipmentDetails.item_details(:grappling_hook)
+      {4, :kg, 1}
+
+      iex > EquipmentDetails.item_details(:probe)
+      {2, :kg, 1}
+
   """
   def item_details(:space_helmet) do
     {3, :kg, 1}
@@ -41,7 +70,7 @@ defmodule EquipmentDetails do
     {2, :kg, 1}
   end
 
-  def item_details(other) do
-    raise "unknown item: #{other}"
+  def item_details(_other) do
+    raise "unknown item"
   end
 end
