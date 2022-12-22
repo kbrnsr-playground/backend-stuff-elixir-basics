@@ -4,24 +4,11 @@ defmodule EquipmentDetails do
   """
 
   @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> EquipmentDetails.hello()
-      [:world]
-
-  """
-  def hello do
-    [:world]
-  end
-
-  @doc """
   Provides list of equipment specified as atoms.
 
   ## Examples
 
-      iex > EquipmentDetails.get_equipment_list
+      iex> EquipmentDetails.get_equipment_list
       [:space_helmet, :space_suit, :snacks, :grappling_hook, :probe]
 
   """
@@ -34,20 +21,23 @@ defmodule EquipmentDetails do
 
   ## Examples
 
-      iex > EquipmentDetails.item_details(:space_helmet)
+      iex> EquipmentDetails.item_details(:space_helmet)
       {3, :kg, 1}
 
-      iex > EquipmentDetails.item_details(:space_suit)
+      iex> EquipmentDetails.item_details(:space_suit)
       {16, :kg, 1}
 
-      iex > EquipmentDetails.item_details(:snacks)
+      iex> EquipmentDetails.item_details(:snacks)
       {1, :kg, 16}
 
-      iex > EquipmentDetails.item_details(:grappling_hook)
+      iex> EquipmentDetails.item_details(:grappling_hook)
       {4, :kg, 1}
 
-      iex > EquipmentDetails.item_details(:probe)
+      iex> EquipmentDetails.item_details(:probe)
       {2, :kg, 1}
+
+      iex> EquipmentDetails.item_details(:jet_pack)
+      ** (RuntimeError) unknown item
 
   """
   def item_details(:space_helmet) do
