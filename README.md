@@ -330,3 +330,41 @@ second
 rest
 # [3, 4, 5, 6]
 ```
+
+## Pattern matching in Elixir
+
+Atoms and equality (`iex`):
+
+```Elixir
+:saucer == :blork
+# false
+```
+
+`=` is the match operator, not **assignment**!
+
+1. Matches value on left side with value on right side
+2. If it matches and left side includes a variable, then assign/rebind value from right side to variable.
+
+In `iex`:
+
+```Elixir
+:saucer = :blork
+# ** (MatchError) no match of right hand side value: :blork
+#     (stdlib 4.1.1) erl_eval.erl:496: :erl_eval.expr/6
+#     iex:6: (file)
+```
+
+Use pin operator `^` to compare without assignment/rebinding.
+
+```Elixir
+^s = :saucer
+# ** (MatchError) no match of right hand side value: :saucer
+#     (stdlib 4.1.1) erl_eval.erl:496: :erl_eval.expr/6
+#     iex:8: (file)
+s
+# :blork
+```
+
+## Credits
+
+* Julien Corb for his article [Understand the pin “^" operator in Elixir (medium.com)](https://medium.com/@Julien_Corb/understand-the-pin-operator-in-elixir-a6f534d865a6)
