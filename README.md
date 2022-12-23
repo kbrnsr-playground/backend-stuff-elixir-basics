@@ -365,6 +365,14 @@ s
 # :blork
 ```
 
+## Guards in Elixir
+
+Guards are a way to expand pattern matching with complex checks.
+Guards begin with the `when` keyword followed by boolean expressions. These
+expressions must be pure functions, they must always return the same value for
+a given input, they need to be `idempotent`. These expressions also need to
+only return `true` or `false`
+
 ## Credits
 
 * Julien Corb for his article [Understand the pin “^" operator in Elixir (medium.com)](https://medium.com/@Julien_Corb/understand-the-pin-operator-in-elixir-a6f534d865a6)

@@ -36,9 +36,6 @@ defmodule EquipmentDetails do
       iex> EquipmentDetails.item_details(:probe)
       {2, :kg, 1}
 
-      iex> EquipmentDetails.item_details(:jet_pack)
-      ** (RuntimeError) unknown item
-
   """
   def item_details(:space_helmet) do
     {3, :kg, 1}

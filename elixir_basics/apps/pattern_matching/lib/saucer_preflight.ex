@@ -14,6 +14,10 @@ defmodule SaucerPreflight do
     weight_in_lb <= max_flying_load_lbs()
   end
 
+  defguardp is_valid_equipment_list(value)
+            when is_list(value) and
+                   length(value) != 0
+
   @doc """
   Check if equipment list is under or equal to max flight load
 
@@ -23,8 +27,9 @@ defmodule SaucerPreflight do
       false
 
   """
+  def is_under_max_load?(list \\ [])
 
-  def is_under_max_load?(list) do
+  def is_under_max_load?(list) when is_valid_equipment_list(list) do
     list
     |> calculate_max_weight()
     |> convert_kg_to_lb()
