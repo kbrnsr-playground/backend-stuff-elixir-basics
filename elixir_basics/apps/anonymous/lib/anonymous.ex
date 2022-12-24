@@ -27,6 +27,14 @@ defmodule Anonymous do
     {2, :lb, 1}
   end
 
+  @doc """
+  Get weight of each single piece of equipment in pounds
+
+  ## Examples
+      iex> equipment_list = Anonymous.get_equipment_list()
+      ...> Anonymous.get_weight_lbs(equipment_list)
+      [6.6000000000000005, 35.2, 2.2, 8.8, 2]
+  """
   def get_weight_lbs(equipment_list) do
     get_lbs = fn item ->
       {wt, type, _qty} = item_details(item)
@@ -40,11 +48,28 @@ defmodule Anonymous do
     Enum.map(equipment_list, get_lbs)
   end
 
+  @doc """
+  Get first item in a list
+
+  ## Examples
+      iex> equipment_list = Anonymous.get_equipment_list()
+      ...> Anonymous.get_first_item(equipment_list)
+      :space_helmet
+  """
   def get_first_item(equipment_list) do
     first = fn [head | _tail] -> head end
     first.(equipment_list)
   end
 
+  @doc """
+  Convert list of atoms to strings where ' ' replaces '_' and all in uppecase
+
+  ## Examples
+      iex> equipment_list = Anonymous.get_equipment_list()
+      ...> Anonymous.atom_to_string(equipment_list)
+      ["SPACE HELMET", "SPACE SUIT", "SNACKS",
+       "GRAPPLING HOOK", "PROBE"]
+  """
   def atom_to_string(equipment_list) do
     convert = fn x ->
       to_string(x)
