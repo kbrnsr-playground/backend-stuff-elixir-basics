@@ -51,7 +51,7 @@ defmodule ControlFlow do
       iex> ControlFlow.error_code_check(404)
       :error
   """
-  def error_code_check(value) do
+  def error_code_check(value) when is_positive_integer_or_zero(value) do
     case value do
       200 -> :ok
       201 -> :created
