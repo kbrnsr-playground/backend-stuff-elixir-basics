@@ -379,7 +379,7 @@ only return `true` or `false`
 
 ## Control flow structures in Elixir
 
-Relevant code can be found inside the [`elixir_basics/apps/control_flow`](elixir_basics/apps/control_flow/) folder.
+Relevant code can be found inside the [`elixir_basics/apps/control_flow`](elixir_basics/apps/control_flow) folder.
 
 Control flow structures allow us to compare a given value against a pattern.
 
@@ -425,6 +425,58 @@ iex> if false do
 ...> else
 ...> "blork left without saying goodbye"
 # "blork left without saying goodbye"
+```
+
+## Anonymours functions in Elixir
+
+Relevant code can be found inside the [`elixir_basics/apps/anonymous`](elixir_basics/apps/anonymous) folder.
+
+Anonymous function are used througout Elixir, on their own as return values and as arguments in higher order functions.
+
+```Elixir
+iex> Enum.map([1, 2, 3], fn n -> n + 1 end)
+[2, 3, 4]
+```
+
+```Elixir
+iex> add = fn a, b -> a + b end
+# #Function<41.3316493/2 in :erl_eval.expr/6>
+iex> add.(1, 2)
+# 3
+iex> is_function(add)
+# true
+iex> is_function(add, 2)
+# true
+iex> is_function(add, 1)
+# false
+```
+
+Use capture operator, or capture short-hand
+
+```Elixir
+iex> add = & &1 + &2
+# &:erlang.+/2
+iex> add.(2, 3)
+# 5
+iex> existing = fn a, b -> a <= b end
+# #Function<41.3316493/2 in :erl_eval.expr/6>
+iex> existing.(2, 3)
+# true
+iex> existing = &<=/2
+# &:erlang."=<"/2
+iex> existing.(4, 3)
+# false
+iex> y = 4
+# 4
+iex> scope = fn ->
+...> x = 3
+...> x * y
+...> end
+# #Function<43.3316493/0 in :erl_eval.expr/6>
+iex> scope.()
+# 12
+iex> x
+# ** (CompileError)
 ```
 
 ## Credits
