@@ -20,6 +20,16 @@ defmodule ControlFlow do
     unless load < 55, do: "Too heavy to fly!", else: "Safe to fly!"
   end
 
+  @doc """
+  Return status of fuel tank based on fuel percentage
+
+  ## Examples
+      iex> ControlFlow.check_fuel_level(100)
+      "full tank"
+
+      iex> ControlFlow.check_fuel_level(25)
+      "1/4 tank"
+  """
   def check_fuel_level(percentage) do
     cond do
       percentage == 100 -> "full tank"
