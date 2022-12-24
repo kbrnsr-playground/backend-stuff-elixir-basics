@@ -63,12 +63,17 @@ defmodule ControlFlow do
 
   defp convert_kg_to_lbs(kg_value), do: kg_value * 2.2
 
-  def equipment_check(equipment_tuple) do
+  def equipment_check(equipment_tuple)
+      when is_tuple(equipment_tuple) do
     case equipment_tuple do
-      {weight, unit_type, quantity} when weight / quantity < 16 and unit_type == :kg ->
+      {weight, unit_type, quantity}
+      when is_integer(weight) and is_atom(unit_type) and is_integer(quantity) and
+             weight / quantity < 16 and unit_type == :kg ->
         :equipment_cleared
 
-      {weight, unit_type, quantity} when unit_type == :lb ->
+      {weight, unit_type, quantity}
+      when is_integer(weight) and is_atom(unit_type) and is_integer(quantity) and
+             unit_type == :lb ->
         if convert_kg_to_lbs(weight) / quantity < 16, do: :equipment_cleared, else: :failed
 
       _ ->
