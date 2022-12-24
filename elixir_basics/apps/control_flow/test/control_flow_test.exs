@@ -43,4 +43,18 @@ defmodule ControlFlowTest do
       assert_raise FunctionClauseError, fn -> ControlFlow.error_code_check(:not_valid) end
     end
   end
+
+  describe "equipment_check" do
+    test "1 piece of equipment weighs 16 kg" do
+      assert ControlFlow.equipment_check({16, :kg, 1}) == :failed
+    end
+
+    test "invalid type" do
+      assert_raise FunctionClauseError, fn -> ControlFlow.equipment_check("Yeah!") end
+    end
+
+    test "invalid tuple" do
+      assert ControlFlow.equipment_check({5, :kgs, 1}) == :unknown
+    end
+  end
 end
