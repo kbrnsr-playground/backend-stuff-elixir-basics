@@ -41,6 +41,16 @@ defmodule ControlFlow do
     end
   end
 
+  @doc """
+  Checks http request code and return status
+
+  ## Examples
+      iex> ControlFlow.error_code_check(200)
+      :ok
+
+      iex> ControlFlow.error_code_check(404)
+      :error
+  """
   def error_code_check(value) do
     case value do
       200 -> :ok
