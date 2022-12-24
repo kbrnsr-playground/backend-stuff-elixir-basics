@@ -3,9 +3,21 @@ defmodule ControlFlow do
   Documentation for `ControlFlow`.
   """
 
-  def check_max_load(load) do
+  defguard is_positive_integer_or_zero(value) when is_integer(value) and value >= 0
+
+  @doc """
+  Checks if it's safe to fly or not with the load specified
+
+  ## Examples
+      iex> ControlFlow.check_max_load(54)
+      "Safe to fly!"
+
+      iex> ControlFlow.check_max_load(55)
+      "Too heavy to fly!"
+  """
+  def check_max_load(load) when is_positive_integer_or_zero(load) do
     # if load < 55, do: "Safe to fly!", else: "Too heavy to fly!"
-    unless load < 55, do: "Too heavy to fly!", else: "Safe to fly"
+    unless load < 55, do: "Too heavy to fly!", else: "Safe to fly!"
   end
 
   def check_fuel_level(percentage) do
