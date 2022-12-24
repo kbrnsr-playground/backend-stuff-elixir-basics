@@ -63,13 +63,24 @@ defmodule ControlFlow do
 
   defp convert_kg_to_lbs(kg_value), do: kg_value * 2.2
 
+  @doc """
+  Checks single piece of equipment,
+  more specifically it checks if the equipment/quantity is less than 16 based.
+
+  ## Examples
+    iex> ControlFlow.equipment_check({52, :kg, 2})
+    :failed
+
+    iex> ControlFlow.equipment_check({7, :lb, 1})
+    :equipment_cleared
+  """
   def equipment_check(equipment_tuple)
       when is_tuple(equipment_tuple) do
     case equipment_tuple do
       {weight, unit_type, quantity}
       when is_integer(weight) and is_atom(unit_type) and is_integer(quantity) and
-             weight / quantity < 16 and unit_type == :kg ->
-        :equipment_cleared
+             unit_type == :kg ->
+        if weight / quantity < 16, do: :equipment_cleared, else: :failed
 
       {weight, unit_type, quantity}
       when is_integer(weight) and is_atom(unit_type) and is_integer(quantity) and
