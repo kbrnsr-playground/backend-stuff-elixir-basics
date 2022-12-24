@@ -479,6 +479,70 @@ iex> x
 # ** (CompileError)
 ```
 
+## Bitstrings in Elixir
+
+Bitstrings allow us to work with raw binary data, they are denoted with double checrons `<<`, `>>` on each side.
+
+```Elixir
+iex> 0b110
+# 6
+iex> <<0b110::3>>
+# <<6::size(3)>>
+iex> <<0b110::3>> == <<6::3>>
+# true
+iex> <<6::3>> == <<6::size(3)>>
+# true
+```
+
+### Stacking together bitstrings
+
+```Elixir
+iex> first = <<0b110::3>>
+# <<6::size(3)>>
+iex> second = <<0b010::3>>
+# <<2::size(3)>>
+iex> <<first::bitstring, second::bitstring>>
+# <<50::size(6)>>
+```
+
+### Binary matching
+
+```Elixir
+iex>  <<"Hello, ", name::binary>> = "Hello, Blork"
+# "Hello, Blork"
+iex> "Blork"
+"Blork"
+```
+
+```Elixir
+iex> <<data_size::40, count::size(data_size)>> = <<8::40, 3::8>>
+# <<0, 0, 0, 0, 8, 3>>
+```
+
+### Binary and bitstrings
+
+```Elixir
+iex> is_bitstring(<<3::4>>)
+# true
+iex> is_binary(<<3::4>>)
+# false
+iex> is_bitstring(<<0, 255, 42>>)
+# true
+iex> is_binary(<<0, 255, 42>>))
+# true
+iex> is_binary(<<42::16>>)
+# true
+```
+
+### Codepoints
+
+```Elixir
+iex> 0b1000001
+# 65
+iex> ?A
+# 65
+```
+
 ## Credits
 
 * Julien Corb for his article [Understand the pin “^" operator in Elixir (medium.com)](https://medium.com/@Julien_Corb/understand-the-pin-operator-in-elixir-a6f534d865a6)
