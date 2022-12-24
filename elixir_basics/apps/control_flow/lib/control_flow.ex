@@ -30,7 +30,8 @@ defmodule ControlFlow do
       iex> ControlFlow.check_fuel_level(25)
       "1/4 tank"
   """
-  def check_fuel_level(percentage) do
+  def check_fuel_level(percentage)
+      when is_positive_integer_or_zero(percentage) and percentage <= 100 do
     cond do
       percentage == 100 -> "full tank"
       percentage > 74 -> "3/4 tank"
