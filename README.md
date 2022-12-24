@@ -6,7 +6,7 @@ the
 [Elixir Basics](https://www.youtube.com/playlist?list=PL2Rv8vpZJz4w7Sm9STyZvoY0JAKUk_JOB)
 playlist.
 
-The tutorial code authored by the content creator can be found in [`@jacobluetzow`](https://github.com/jacobluetzow)'s profile [`jacobluetzow/elixir_basics_solutions```](https://github.com/jacobluetzow/elixir_basics_solutions)
+The tutorial code authored by the content creator can be found in [`@jacobluetzow`](https://github.com/jacobluetzow)'s repos [`jacobluetzow/elixir_basics_solutions`](https://github.com/jacobluetzow/elixir_basics_solutions)
 
 I decided to create the Mix umbrella project `elixir_basics` a few parts into
 the video series and move all other Mix projects inside it.
@@ -333,6 +333,8 @@ rest
 
 ## Pattern matching in Elixir
 
+Relevant code can be found inside the [`elixir_basics/apps/pattern_matching`](elixir_basics/apps/pattern_matching) folder.
+
 Atoms and equality (`iex`):
 
 ```Elixir
@@ -367,11 +369,63 @@ s
 
 ## Guards in Elixir
 
+Relevant code can be found inside the [`elixir_basics/apps/guards`](elixir_basics/apps/guards) folder.
+
 Guards are a way to expand pattern matching with complex checks.
 Guards begin with the `when` keyword followed by boolean expressions. These
 expressions must be pure functions, they must always return the same value for
 a given input, they need to be `idempotent`. These expressions also need to
 only return `true` or `false`
+
+## Control flow structures in Elixir
+
+Relevant code can be found inside the [`elixir_basics/apps/control_flow`](elixir_basics/apps/control_flow/) folder.
+
+Control flow structures allow us to compare a given value against a pattern.
+
+```Elixir
+iex> if true do
+...> "Blork says hi!"
+...> end
+# "Blork says hi!"
+```
+
+```Elixir
+iex> unless true do
+...> "this will not show"
+...> end
+# nil
+```
+
+```Elixir
+iex> unless false do
+...> "this will show"
+...> end
+# "this will show"
+```
+
+```Elixir
+iex> if false do
+...> "blork won't say hi"
+...> end
+# nil
+```
+
+```Elixir
+iex> if false do
+...> "blork won't say hi"
+...> else
+...> "blork left without saying goodbye"
+# "blork left without saying goodbye"
+```
+
+```Elixir
+iex> if false do
+...> "blork won't say hi"
+...> else
+...> "blork left without saying goodbye"
+# "blork left without saying goodbye"
+```
 
 ## Credits
 
